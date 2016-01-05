@@ -13,8 +13,12 @@ namespace Day1HW.Tests
         [TestMethod()]
         public void GroupByCostTest_get_group_of_sum_of_cost_per_3_items()
         {
+            //需求不是一個array放著 cost 的資料，而是一筆 product 身上有 cost, sellprice, revenue 等 property
+            //因此這樣的測試案例並沒有完整表達出來需求的context
             int[] costValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
             GroupByCategory gbc = new GroupByCategory();
+            
+            //如果未來還要group by sellprice, 那麼gbc就得新增一個方法，這樣的擴充性是比較不足的
             var result = gbc.GroupByCost(costValues);
             int[] expected = new int[]{6, 15, 24, 21};
             CollectionAssert.AreEqual(expected, result);
