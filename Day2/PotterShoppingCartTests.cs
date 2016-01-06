@@ -69,6 +69,35 @@ namespace PotterShoppingCart.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        public void getTotalAmountTest_一二集各買了一本_第三集買了兩本_價格應為價格應為370()
+        {
+            var target = new PotterShoppingCart();
+            target.addToCart(1);
+            target.addToCart(2);
+            target.addToCart(3);
+            target.addToCart(3);
+            var actual = target.getTotalAmount();
+            var expected = 370;
+            Assert.AreEqual(expected, actual);
+        }
+
+                [TestMethod()]
+        public void getTotalAmountTest_第一集買了一本_第二三集各買了兩本_價格應為價格應為460()
+        {
+            var target = new PotterShoppingCart();
+            target.addToCart(1);
+            target.addToCart(2);
+            target.addToCart(2);
+            target.addToCart(3);
+            target.addToCart(3);
+            var actual = target.getTotalAmount();
+            var expected = 460;
+            Assert.AreEqual(expected, actual);
+        }
+
+        
+
 
     }
 }
